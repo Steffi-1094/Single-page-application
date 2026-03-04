@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Brand UI - Tailwind</title>
+
+<style>
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* ====== NAVIGATION ====== */
+header {
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00adb5;
+}
+
+/* ====== HERO SECTION ====== */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: linear-gradient(to right, #00adb5, #393e46);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+.hero button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background: #fff;
+  color: #00adb5;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
+}
+
+/* ====== FEATURES SECTION ====== */
+.features {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.feature-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.feature {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+/* ====== CALL TO ACTION SECTION ====== */
+
+/* Background brand color */
+.bg-brandAccent {
+  background: linear-gradient(to right, #00adb5, #393e46);
+}
+
+/* White text */
+.text-white {
+  color: #ffffff;
+}
+
+/* Vertical padding */
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Center text */
+.text-center {
+  text-align: center;
+}
+
+/* Heading size */
+.text-3xl {
+  font-size: 1.8rem;
+}
+
+/* Bold font */
+.font-bold {
+  font-weight: 700;
+}
+
+/* Margin bottom */
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* Button white background */
+.bg-white {
+  background-color: #ffffff;
+}
+
+/* Brand text color */
+.text-brandAccent {
+  color: #00adb5;
+}
+
+/* Horizontal padding */
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Vertical padding */
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Rounded corners */
+.rounded-lg {
+  border-radius: 8px;
+}
+
+/* Semi-bold font */
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Hover effect */
+.hover\:bg-gray-200:hover {
+  background-color: #e5e7eb;
+}
+
+/* Smooth transition */
+.transition {
+  transition: all 0.3s ease;
+}
+
+/* Button hover animation */
+section button:hover {
+  transform: scale(1.05)
+  
+}
+
+
+/* ====== FOOTER ====== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* ====== ANIMATION ====== */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ====== TABLET VIEW ====== */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .feature-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ====== DESKTOP VIEW ====== */
+@media (min-width: 1024px) {
+  .feature-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero {
+    padding: 5rem 2rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ====== HEADER ====== -->
+<header>
+  <nav>
+    <h2>MyBrand</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ====== HERO SECTION ====== -->
+<section id="home" class="hero">
+  <h1> Beautiful Interfaces Faster</h1>
+  <p>Customized Tailwind theme aligned with brand identity.</p>
+  <button onclick="scrollToFeatures()">Explore Features</button>
+</section>
+
+<!-- ====== FEATURES SECTION ====== -->
+<section id="features" class="features">
+  <h2>Our Features</h2>
+  <div class="feature-container">
+    <article class="feature">
+      <h3>Reusable Components</h3>
+      <p>Pre-built utility classes speed up development significantly.</p>
+    </article>
+    <article class="feature">
+      <h3>Responsive First</h3>
+      <p>Mobile-first design using Tailwind responsive breakpoints.</p>
+    </article>
+    <article class="feature">
+      <h3>Accessible UI</h3>
+      <p>Semantic structure and proper contrast for better usability.</p>
+    </article>
+  </div>
+</section>
+
+<!-- Call To Action -->
+<section class="bg-brandAccent text-white py-16 text-center">
+  <h3 class="text-3xl font-bold mb-4">Ready to Grow Your Brand?</h3>
+  <button class="bg-white text-brandAccent px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+    Contact Us
+  </button>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer id="contact">
+  <p>&copy; 2026 BrandUI. All rights reserved.</p>
+</footer>
+
+<!-- ====== JAVASCRIPT ====== -->
+<script>
+function scrollToFeatures() {
+  document.getElementById("features").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
+
+</body>
+</html>
